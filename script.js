@@ -102,3 +102,37 @@ if (window.innerWidth <= 768) {
     showCase(currentCase);
   });
 }
+
+const contactForm = document.querySelector(".contact-form");
+
+contactForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const name = this.elements["name"].value.trim();
+  const email = this.elements["email"].value.trim();
+  const message = this.elements["message"].value.trim();
+
+  if (!name || !email || !message) {
+    alert("Please fill in all required fields!");
+    return;
+  }
+
+  const submitBtn = this.querySelector(".submit-btn");
+  submitBtn.textContent = "Message Sent!";
+  submitBtn.style.backgroundColor = "#4CAF50";
+
+  setTimeout(() => {
+    submitBtn.textContent = "Fire Away →";
+    submitBtn.style.backgroundColor = "#4da6ff";
+    this.reset();
+  }, 3000);
+});
+
+const messageField = document.getElementById("message");
+messageField.addEventListener("focus", function () {
+  this.placeholder = "Type here... 😊 🚀 💡";
+});
+
+messageField.addEventListener("blur", function () {
+  this.placeholder = "";
+});
