@@ -282,7 +282,90 @@ body {
   opacity: 0.9;
 }
 
-/* Animations */
+.clients {
+  background: #333;
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.clients .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.clients h2 {
+  font-size: 36px;
+  margin-bottom: 50px;
+  color: #fff;
+}
+
+.cases-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.case-card {
+  background: #3a3a3a;
+  border-radius: 10px;
+  padding: 30px;
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(77, 166, 255, 0.2);
+}
+
+.case-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(77, 166, 255, 0.3);
+  border-color: rgba(77, 166, 255, 0.5);
+}
+
+.case-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #4da6ff, #3385ff);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.case-card:hover::before {
+  transform: scaleX(1);
+}
+
+.case-icon {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #4da6ff;
+  transition: transform 0.3s ease;
+}
+
+.case-card:hover .case-icon {
+  transform: rotate(10deg) scale(1.1);
+}
+
+.case-card h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.case-card p {
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
 @keyframes float {
   0%,
   100% {
@@ -308,7 +391,6 @@ body {
   }
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   #home h1 {
     font-size: 32px;
@@ -361,6 +443,21 @@ body {
   }
 
   .services h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cases-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .case-card {
+    max-width: 100%;
+  }
+
+  .clients h2 {
     font-size: 28px;
   }
 }
