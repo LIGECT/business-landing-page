@@ -9,6 +9,7 @@ body {
   font-family: "Montserrat", sans-serif;
   line-height: 1.6;
   color: #fff;
+  padding-top: 60px;
 }
 
 /* Hero Section */
@@ -508,6 +509,249 @@ body {
   box-shadow: 0 5px 15px rgba(77, 166, 255, 0.3);
 }
 
+.footer {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 60px 20px 30px;
+  text-align: center;
+}
+
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  margin-bottom: 30px;
+}
+
+.bh-logo-small {
+  width: 80px;
+  height: 80px;
+  background: #2a2a2a;
+  border-radius: 50%;
+  margin: 0 auto;
+  position: relative;
+  border: 2px solid #4da6ff;
+}
+
+.bh-logo-small::before {
+  content: "BH";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #4da6ff;
+}
+
+.tech-stack {
+  max-width: 800px;
+  margin: 0 auto 30px;
+  line-height: 1.7;
+  opacity: 0.8;
+  font-size: 15px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social a {
+  color: #fff;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.footer-social a:hover {
+  color: #4da6ff;
+  transform: translateY(-3px);
+}
+
+.footer-contact a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+  color: #4da6ff;
+}
+
+.copyright {
+  font-size: 14px;
+  opacity: 0.6;
+  margin-top: 30px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #1a1a1a;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.bh-logo-nav {
+  width: 30px;
+  height: 30px;
+  background: #4da6ff;
+  border-radius: 50%;
+  position: relative;
+}
+
+.bh-logo-nav::before {
+  content: "BH";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 30px;
+}
+
+.navbar-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding: 5px 0;
+  transition: all 0.3s ease;
+}
+
+.navbar-links a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #4da6ff;
+  transition: width 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #4da6ff;
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+.burger-menu {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+.burger-menu span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Active burger menu state */
+.burger-menu.active span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.burger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.active span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar-links {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #1a1a1a;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 20px 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-150%);
+    transition: transform 0.3s ease;
+  }
+
+  .navbar-links.active {
+    transform: translateY(0);
+  }
+
+  .navbar-links a {
+    padding: 15px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar-links a::after {
+    display: none;
+  }
+
+  .burger-menu {
+    display: flex;
+  }
+}
+
 @keyframes float {
   0%,
   100% {
@@ -611,5 +855,16 @@ body {
 
   .contact-content {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-links {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .tech-stack {
+    font-size: 14px;
   }
 }

@@ -136,3 +136,59 @@ messageField.addEventListener("focus", function () {
 messageField.addEventListener("blur", function () {
   this.placeholder = "";
 });
+
+const footerLogo = document.querySelector(".bh-logo-small");
+
+footerLogo.addEventListener("mouseover", function () {
+  this.style.transform = "rotate(10deg)";
+  this.style.borderColor = "#3385ff";
+});
+
+footerLogo.addEventListener("mouseout", function () {
+  this.style.transform = "rotate(0)";
+  this.style.borderColor = "#4da6ff";
+});
+
+document.querySelector(".copyright").innerHTML = document
+  .querySelector(".copyright")
+  .innerHTML.replace("2023", new Date().getFullYear());
+
+const burgerMenu = document.getElementById("burgerMenu");
+const navbarLinks = document.getElementById("navbarLinks");
+
+burgerMenu.addEventListener("click", function () {
+  this.classList.toggle("active");
+  navbarLinks.classList.toggle("active");
+});
+
+navbarLinks.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", function () {
+    if (window.innerWidth <= 768) {
+      burgerMenu.classList.remove("active");
+      navbarLinks.classList.remove("active");
+    }
+  });
+});
+
+window.addEventListener("scroll", function () {
+  const sections = document.querySelectorAll("section");
+  const scrollPosition = window.scrollY + 100;
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    const sectionId = section.getAttribute("id");
+
+    if (
+      scrollPosition >= sectionTop &&
+      scrollPosition < sectionTop + sectionHeight
+    ) {
+      document.querySelectorAll(".navbar-links a").forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${sectionId}`) {
+          link.classList.add("active");
+        }
+      });
+    }
+  });
+});
