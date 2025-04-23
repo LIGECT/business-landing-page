@@ -107,6 +107,111 @@ body {
   padding-top: 10px;
 }
 
+.about {
+  background: #f5f5f5;
+  color: #333;
+  padding: 80px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.about-content {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+  padding-right: 40px;
+}
+
+.about h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #1a1a1a;
+}
+
+.about p {
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.features {
+  margin: 40px 0;
+  list-style: none;
+}
+
+.features li {
+  margin-bottom: 30px;
+  padding-left: 20px;
+  border-left: 3px solid #4da6ff; /* голубой вместо красного */
+}
+
+.features h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #1a1a1a;
+}
+
+.fun-fact {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin-top: 40px;
+}
+
+.fun-fact strong {
+  color: #4da6ff; /* голубой вместо красного */
+}
+
+.about-logo {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.bh-logo {
+  width: 300px;
+  height: 300px;
+  background: #1a1a1a;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.bh-logo:hover {
+  transform: scale(1.05);
+}
+
+.bh-logo::before {
+  content: "BH";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.bh-logo::after {
+  content: "";
+  position: absolute;
+  top: 20px; /* исправлена опечатка */
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  border: 3px solid #4da6ff; /* голубой вместо красного */
+  border-radius: 50%;
+}
+
 /* Animations */
 @keyframes float {
   0%,
@@ -148,5 +253,29 @@ body {
   }
   .logo::before {
     font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+  }
+
+  .about-content {
+    padding-right: 0;
+    margin-bottom: 40px;
+  }
+
+  .about h2 {
+    font-size: 28px;
+  }
+
+  .bh-logo {
+    width: 200px;
+    height: 200px;
+  }
+
+  .bh-logo::before {
+    font-size: 60px;
   }
 }
