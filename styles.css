@@ -151,6 +151,105 @@ body {
   color: #1a1a1a;
 }
 
+.team {
+  margin: 60px 0;
+  text-align: center;
+}
+.team h3 {
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: #111;
+}
+.team-grid {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.team-member {
+  background: #f8f8f8;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  width: 180px;
+}
+.avatar {
+  width: 80px;
+  height: 80px;
+  font-size: 40px;
+  background: #4da6ff;
+  color: #fff;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.team-member p {
+  font-size: 14px;
+  color: #444;
+}
+.team-member strong {
+  display: block;
+  font-size: 16px;
+  color: #111;
+}
+.team-member span {
+  font-style: italic;
+  font-size: 13px;
+  color: #666;
+}
+
+.timeline {
+  margin: 60px 0;
+  position: relative;
+  padding-left: 30px;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #4da6ff;
+}
+.timeline h3 {
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: #111;
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+  padding-left: 30px;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.5s;
+}
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.timeline-item .dot {
+  width: 12px;
+  height: 12px;
+  background: #4da6ff;
+  border-radius: 50%;
+  position: absolute;
+  left: -18px;
+  top: 6px;
+}
+.timeline-item h4 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: #222;
+}
+.timeline-item p {
+  font-size: 16px;
+  color: #444;
+}
+
 .fun-fact {
   background: #fff;
   padding: 20px;
@@ -245,7 +344,7 @@ body {
   max-width: 300px;
   transition: all 0.3s ease;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .service-card::before {
@@ -279,6 +378,20 @@ body {
   font-size: 16px;
   line-height: 1.6;
   opacity: 0.9;
+}
+
+.service-card:nth-child(-n + 2)::after {
+  content: "★ Top Service ★";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #4da6ff;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .clients {
