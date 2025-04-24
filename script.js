@@ -222,3 +222,45 @@ const observer = new IntersectionObserver(
   { threshold: 0.1 }
 );
 timelineItems.forEach((item) => observer.observe(item));
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   const statItems = document.querySelectorAll(".stat-item h3");
+
+//   const animateCount = (el) => {
+//     const target = +el.getAttribute("data-target");
+//     let count = 0;
+//     const step = Math.ceil(target / 60);
+
+//     const update = () => {
+//       count += step;
+//       if (count >= target) {
+//         el.textContent =
+//           target + (el.getAttribute("data-target").includes("+") ? "+" : "");
+//       } else {
+//         el.textContent = count;
+//         requestAnimationFrame(update);
+//       }
+//     };
+
+//     update();
+//   };
+
+//   const observer = new IntersectionObserver(
+//     (entries, obs) => {
+//       entries.forEach((entry) => {
+//         if (entry.isIntersecting) {
+//           const h3 = entry.target.querySelector("h3");
+//           animateCount(h3);
+//           obs.unobserve(entry.target);
+//         }
+//       });
+//     },
+//     {
+//       threshold: 0.5,
+//     }
+//   );
+
+//   document
+//     .querySelectorAll(".stat-item")
+//     .forEach((item) => observer.observe(item));
+// });
