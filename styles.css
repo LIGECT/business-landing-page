@@ -143,6 +143,11 @@ body {
   margin-bottom: 30px;
   padding-left: 20px;
   border-left: 3px solid #4da6ff;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.features li:hover {
+  transform: translateX(10px);
 }
 
 .features h3 {
@@ -342,9 +347,10 @@ body {
   flex: 1;
   min-width: 250px;
   max-width: 300px;
-  transition: all 0.3s ease;
   position: relative;
   overflow: visible;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .service-card::before {
@@ -359,7 +365,7 @@ body {
 
 .service-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(77, 166, 255, 0.2);
+  box-shadow: 0 10px 20px rgba(77, 166, 255, 0.3);
 }
 
 .service-icon {
